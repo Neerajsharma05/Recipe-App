@@ -5,6 +5,8 @@
     color: white;
     font-family: sans-serif;
     scroll-behavior: smooth;
+     ::-webkit-scrollbar{
+    display: none;
 }
 
 html,
