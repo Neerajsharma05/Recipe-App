@@ -19,6 +19,7 @@ body {
     width: 100%;
     height: 100%;
     /* background-color: black; */
+    /* display: none; */
 
 }
 
@@ -54,6 +55,7 @@ body {
 .nav-left .ri-menu-line{
     display: none;
     cursor: pointer;
+    color: white;
 }
 
 .nav h1 {
@@ -117,11 +119,12 @@ nav button:hover,
     top: 0;
     right: 0;
     height: 700px;
-    background-color: #342619;
+    background-color: #34261955;
     padding: 40px 20px 20px 20px ;
     display: none;
-    transition: all 0.3s ease-in-out;
     z-index: 9999;
+    backdrop-filter: blur(30px) saturate(2);
+  -webkit-backdrop-filter: blur(30px) saturate(2);
 }
 
 .side-bar{
@@ -130,6 +133,7 @@ nav button:hover,
     display: flex;
     display: flex;
     flex-direction: column;
+
 }
 
 .side-bar h1{
@@ -143,7 +147,6 @@ nav button:hover,
     /* margin-bottom: 20px; */
     font-size: 22px;
     border-top: 1px solid rgba(255, 255, 255, 0.6);
-    transition: all .3s ease-in-out;
 }
 
 
@@ -159,6 +162,21 @@ nav button:hover,
     /* background-color: #342619; */
 
 }
+
+@keyframes sidebar {
+    0%{
+        .side-bar{
+            transform: translateX(0);
+        }
+    }
+    100%{
+        .side-bar{
+            transform: translateX(-100px);
+        }
+    }
+}
+
+
 .side-bar button :hover{
     background-color: transparent;
 }
@@ -179,11 +197,16 @@ nav button:hover,
     padding: 20px;
 }
 
-.social-media a{
+.social-media a {
     text-decoration: none;
     font-size: 28px;
     cursor: pointer;
     transition: all .3s ease-in-out;
+    /* color: white; */
+}
+
+.social-media i{
+    color: white;
 }
 
 .social-media a :hover{
@@ -192,14 +215,14 @@ nav button:hover,
 }
 
 .hero {
-    background-image: url('./imges/background\ image.jpg');
+    background-image: url('./imges/background\ image2.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     /* background-size: ; */
     width: 100%;
     height: 400px;
-    background-color: red;
+    background-color: #342619;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -334,7 +357,7 @@ nav button:hover,
 
 .recipe {
     width: 300px;
-    height: 420px;
+    height: auto;
     background-color: white;
     color: black;
     overflow: hidden;
@@ -488,7 +511,7 @@ h3 {
 
 .sec {
     width: 100%;
-    height: 500px;
+    height: 515px;
     /* background-color: red; */
     padding: 20px 30px;
     margin-bottom: 40px;
@@ -522,6 +545,57 @@ h3 {
     border-radius: 16px;
     --webkit-boder-radiud: 16px;
 }
+
+
+
+/* fotter */
+
+.fotter-container{
+    width: 100%;
+    height: 300px;
+    background-color: red;
+    background: url('./imges/img\ 2.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    color: black;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+
+}
+
+.fotter-content{
+    width: 50%;
+    height: 100%;
+    color: #342619;
+    padding: 20px 30px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* align-items: center; */
+
+}
+
+
+
+.fotter-content h1,p,i{
+    color: #342619;
+    margin-bottom: 10px;
+
+}
+
+.fotter-content .social-media{
+    justify-content: start;
+}
+
+
+ .fotter-content .social-media i{
+        padding: 1px;
+        color: #342619;
+    }
+
 
 
 @media screen and (width< 825px) {
@@ -589,13 +663,33 @@ h3 {
         padding: 2px 5px;
     }
 
+
+    .fotter-content h1{
+        font-size: 4vmax;
+        margin-bottom: 10px;
+    }
+    .fotter-content p{
+        margin-bottom: 10px;
+        font-size: 2vmax;
+    }
+
+    .fotter-container i{
+        font-size: 20px;
+    
+    }
+
+    .fotter-content .social-media i{
+        padding: 1px;
+        color: #342619;
+    }
+
 }
 
 
 @media screen and (width <610px) {
 
     .nav {
-        background-color: red;
+        /* background-color: red; */
 
     }
     .nav-left a{
@@ -637,6 +731,10 @@ h3 {
     .category-container img{
         margin-bottom: 0px;
     }
+     .fotter-content p{
+        margin-bottom: 10px;
+        font-size: 1.7vmax;
+    }
 
 
     
@@ -648,7 +746,7 @@ h3 {
         /* flex-direction: column; */
         align-items: center;
         padding: none;
-        background-color: gray;
+        /* background-color: gray; */
     }
     .nav h1{
         font-size: 22px;
@@ -765,6 +863,37 @@ h3 {
     body {
         /* width: fit-content; */
     }
+
+
+    .fotter-container{
+        height: 200px;
+        background-size: 150%;
+
+    }
+    .fotter-content {
+        width: 70%;
+        padding: 10px 15px;
+
+        overflow: hidden;
+    }
+    .fotter-content h1{
+        font-size: 18px;
+        margin-bottom: 1px;
+    }
+    .fotter-content p{
+        font-size: 10px;
+        margin-bottom: 6px;
+        /* text-wrap-mode: nowrap; */
+        
+    }
+
+    .fotter-content  i{
+        font-size: 17px;
+    }
+    .social-media{
+        padding: 0;
+    }
+
 }
 
 
