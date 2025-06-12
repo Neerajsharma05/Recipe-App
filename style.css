@@ -165,18 +165,6 @@ nav button:hover,
 
 }
 
-@keyframes sidebar {
-    0%{
-        .side-bar{
-            transform: translateX(0);
-        }
-    }
-    100%{
-        .side-bar{
-            transform: translateX(-100px);
-        }
-    }
-}
 
 
 .side-bar button :hover{
@@ -469,6 +457,10 @@ h3 {
 
 }
 
+
+.d-right p{
+    color: white;
+}
 .d-right ul{
     width: 100%;
     display: flex;
