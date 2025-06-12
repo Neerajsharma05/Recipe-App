@@ -23,7 +23,7 @@ A clean and responsive **Recipe App** built using HTML, CSS, and JavaScript. It 
 
 ## 📸 Screenshots
 
-[Home Page](imges/homepage.png) <!-- (Optional: Replace with actual screenshot URL) -->
+[Home Page](imges/home-page.jpg) <!-- (Optional: Replace with actual screenshot URL) -->
 ![Recipe Detail Page](imges/categories.png)
 
 ---
