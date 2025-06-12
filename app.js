@@ -39,32 +39,9 @@ const fetchRecipes = async (query) => {
     data.meals.forEach((meal) => {
       if (meal.strArea === "indian") {
         console.log(meal.strMeal);
-      }
-
+    }
       createMealCards(meal, recipeContainer);
-      // const recipeDiv = document.createElement('div');
-      // recipeDiv.classList.add('recipe');
-      // recipeDiv.innerHTML = `
-      //     <img src="${meal.strMealThumb}">
-      //     <h3>${meal.strMeal}</h3>
-      //     <p> <span>${meal.strArea}</span> Dish</p>
-      //     <p>Belongs to <span>${meal.strCategory}</span> Category</p>`
-
-      // // recipe button
-      // const ViewBtn = document.createElement('button');
-      // ViewBtn.innerHTML = 'View Recipe'
-      // ViewBtn.classList.add('VewiRecipe');
-      // recipeDiv.appendChild(ViewBtn)
-      // recipeContainer.appendChild(recipeDiv);
-
-      // // adding event listner to Recippe View
-      // ViewBtn.addEventListener('click',()=>{
-      //     recipeDetailPopup(meal);
-      //     console.log('hlooooooooo');
-      //     blackScreen.style.display = 'block';
-
-      //     // fetchIngredients(meal)
-      // })
+      
     });
   } catch (error) {
     recipeContainer.innerHTML = "<h2>Error in Fetching Recipe...</h2>";
@@ -147,20 +124,7 @@ const fecthCategories = async () => {
 };
 fecthCategories();
 
-// const fetchVegtarianMela = async ()=>{
-//   const config = await fetch(`https://www.themealdb.com/api/json/v1/1/filter.php?c=Vegetarian`);
-//   const res =  await config.json();
 
-//   console.log(res);
-
-//   res.meals.forEach(meal=>{
-//     // console.log(meal);
-//     createMealCards(meal,secContainer2);
-//   })
-
-// }
-
-// fetchVegtarianMela();
 // provides meal id for categories
 
 const getMealid = async (query, section) => { 
@@ -229,7 +193,6 @@ const fetchIngredients = (meal) => {
 
 const sidebarMenu = () => {
   const menuBtn = document.querySelector(".ri-menu-line");
-
   const sidebar = document.querySelector(".side-bar-menu-conatiner"); // fixed selector (without All)
   const sidebarCloseBtn = document.querySelector("#closeSideBar"); // use correct ID or class
 
@@ -242,8 +205,25 @@ const sidebarMenu = () => {
     sidebar.style.display = "none"; // hides the sidebar
     blackScreen.style.display = "none";
   });
+
+
+  // console.log(sideBarMenuBtn);
+  
+  const sideBarMenuBtn = document.querySelectorAll('.menuBtn'); 
+
+sideBarMenuBtn.forEach((btn)=>{
+    btn.addEventListener('click',()=>{
+    sidebar.style.display = "none"; // hides the sidebar
+    blackScreen.style.display = "none";
+
+      
+    })
+  })
+
+
 };
 sidebarMenu();
+
 
 // popup detail
 const recipeDetailPopup = (meal) => {
@@ -317,7 +297,6 @@ const secContainer2 = document.querySelector(".sec2");
 const secContainer3 = document.querySelector(".sec3");
 const secContainer4 = document.querySelector(".sec4");
 const secContainer5 = document.querySelector(".sec5");
-// const secTitle2 = document.querySelector('');
 
 fecthSec("Breakfast", secContainer);
 fecthSec("Vegetarian", secContainer2);
